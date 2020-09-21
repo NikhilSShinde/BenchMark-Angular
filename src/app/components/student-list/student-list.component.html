@@ -1,0 +1,37 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-menu is-active buttons">
+      <button class="button is-link btn-info btn-md" [routerLink]="['/create-student']">Create New</button>
+  </div>
+</nav>
+<div class="container">
+    <!-- No data message -->
+    <p *ngIf="Student.length <= 0" class="no-data text-center">There is no Students added yet!</p>
+  
+    <div class="navbar-menu is-active buttons" *ngIf="Student.length > 0">
+      <p class="no-data text-center">Second highest pocket money =>{{Amount.first_name}}  {{Amount.last_name}}  {{Amount.pocket_money}}</p>
+    </div>
+
+    <!-- Student list -->
+    <table class="table table-bordered" *ngIf="Student.length > 0">
+      <thead class="table-success">
+        <tr>
+          <th><input type="checkbox" [(ngModel)]="masterSelected" name="list_name" value="m1" (change)="checkUncheckAll()"></th>  
+          <th scope="col">ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Pocket Money</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of Student; let i = index">
+         <th><input type="checkbox" [(ngModel)]="student.isSelected" name="list_name" value="{{student.id}}" (change)="isAllSelected()"/></th>
+          <th scope="row">{{student.id}}</th>
+          <td>{{student.first_name}}</td>
+          <td>{{student.last_name}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.pocket_money}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

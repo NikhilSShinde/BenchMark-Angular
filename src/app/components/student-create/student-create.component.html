@@ -14,44 +14,106 @@
             <label for="inputName">First Name</label>
             <input class="form-control" type="text" formControlName="firstname">
             <!-- error -->
-            <div class="invalid-feedback" *ngIf="submitted && myForm.firstname.errors?.required">
-              Name is required.
-            </div>
-          </div>
+            <span class="text-danger"
+                *ngIf="(myForm.firstname.touched || submitted) && myForm.firstname.errors?.required">
+                First Name is required
+            </span>
+        </div>
 
           <div class="form-group">
             <label for="inputName">Last Name</label>
             <input class="form-control" type="text" formControlName="lastname">
             <!-- error -->
-            <div class="invalid-feedback" *ngIf="submitted && myForm.lastname.errors?.required">
-              Name is required.
-            </div>
+            <span class="text-danger"
+                *ngIf="(myForm.lastname.touched || submitted) && myForm.lastname.errors?.required">
+                Last Name is required
+            </span>
           </div>
   
           <div class="form-group">
             <label for="inputEmail3">Email</label>
             <input class="form-control" type="text" formControlName="email">
             <!-- error -->
-            <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.required">
-              Enter your email.
-            </div>
-            <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
-              Enter valid email.
-            </div>
+            <span class="text-danger"
+                *ngIf="(myForm.email.touched || submitted) && myForm.email.errors?.required">
+                Email is required
+            </span>
+            <span class="text-danger"
+                *ngIf="myForm.email.touched && myForm.email.errors?.email">
+                Enter a valid email address
+            </span>
           </div>
   
           <div class="form-group">
             <label for="inputVerify3">Pocket Money</label>
-            <input class="form-control" type="text" formControlName="pocketmoney">
+            <input class="form-control" type="number" formControlName="pocketmoney">
             <!-- error -->
-            <div class="invalid-feedback" *ngIf="submitted && myForm.pocketmoney.errors?.required">
-              Enter Pocket Money.
-            </div>
-            <div class="invalid-feedback" *ngIf="submitted && myForm.pocketmoney.errors?.pattern">
-              Enter Numbers Only
-            </div>
+            <span class="text-danger"
+                *ngIf="(myForm.pocketmoney.touched || submitted) && myForm.pocketmoney.errors?.required">
+                Pocket Money is required
+            </span>
           </div>
-  
+
+          <div class="form-group">
+            <label for="inputName">Password</label>
+            <input class="form-control" type="password" formControlName="password">
+            <!-- error -->
+            <span class="text-danger"
+                *ngIf="(myForm.password.touched || submitted) && myForm.password.errors?.required">
+                Password is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">Age</label>
+            <input class="form-control" type="number" formControlName="age">
+            <!-- error -->
+            <span class="text-danger"
+                *ngIf="(myForm.age.touched || submitted) && myForm.age.errors?.required">
+                Age is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">City</label>
+            <input class="form-control" type="text" formControlName="city">
+            <!-- error -->
+            <span class="text-danger"
+                *ngIf="(myForm.city.touched || submitted) && myForm.city.errors?.required">
+                City is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">State</label>
+            <input class="form-control" type="text" formControlName="state">
+            <!-- error -->
+            <span class="text-danger"
+                *ngIf="(myForm.state.touched || submitted) && myForm.state.errors?.required">
+                State is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">Zip</label>
+            <input class="form-control" type="text" formControlName="zip">
+            <!-- error -->
+            <span class="text-danger"
+                *ngIf="(myForm.zip.touched || submitted) && myForm.zip.errors?.required">
+                Zip code is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputName">Country</label>
+            <input class="form-control" type="text" formControlName="country">
+            <!-- error -->
+            <span class="text-danger"
+                *ngIf="(myForm.country.touched || submitted) && myForm.country.errors?.required">
+                Country code is required
+            </span>
+          </div>
+
           <div class="form-group">
             <button class="btn btn-success btn-lg btn-block" type="submit">Register</button>
           </div>

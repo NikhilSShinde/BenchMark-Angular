@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 
 export class ApiService {
   
-  baseUri:string = 'http://localhost/benchmark/public/api';
+  baseUri:string = 'http://localhost/benchmark/public/';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -35,9 +35,7 @@ export class ApiService {
   }
 
   
-
-
-  // Error handling 
+ // Error handling 
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

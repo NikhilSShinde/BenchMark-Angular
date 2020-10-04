@@ -7,8 +7,19 @@
     <!-- No data message -->
     <p *ngIf="Student.length <= 0" class="no-data text-center">There is no Students added yet!</p>
   
+    
     <div class="navbar-menu is-active buttons" *ngIf="Student.length > 0">
-      <p class="no-data text-center">Second highest pocket money =>{{Amount.first_name}}  {{Amount.last_name}}  {{Amount.pocket_money}}</p>
+      <table class="table no-data text-center" *ngIf="Student.length > 0">
+        <thead class="table-success">
+          <tr> 
+            <th scope="col">Second highest pocket money</th>
+          </tr>
+          <tr>
+            <td scope="col">{{Amount.first_name}}  {{Amount.last_name}} => {{Amount.pocket_money}}</td>
+          </tr>
+        </thead>
+        </table>
+    
     </div>
 
     <!-- Student list -->
